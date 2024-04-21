@@ -1,0 +1,21 @@
+h1{
+	text-align: center;
+}
+
+
+#textDiv{
+	text-align: center;
+}
+#guessDiv{
+	text-align: center;
+}
+#resultWin{
+	color:green;
+}
+#resultFail{
+	color:red;
+}
+
+.myButton{
+	background-color:aqua;
+}
