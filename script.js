@@ -87,7 +87,11 @@ function guessWord() {
 }
 
 function giveUp(){
-	document.getElementById('giveUp').textContent = 'Give up';
+	document.getElementById('giveUp').textContent = 'The correct answer is '+ wordToGuess;
+	document.getElementById("guessLetter").disabled=true;
+	document.getElementById("guessWord").disabled=true;
+	document.getElementById("newGame").disabled=true;
+	document.getElementById("giveUpBtn").disabled=true;
 }
 
 function checkWin() {
