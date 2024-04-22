@@ -4,10 +4,10 @@ h1{
 
 
 #textDiv{
-	text-align: center;
+	text-align: left;
 }
 #guessDiv{
-	text-align: center;
+	text-align: left;
 }
 #resultWin{
 	color:green;
