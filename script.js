@@ -1,3 +1,4 @@
+
 let words = [];
 let currentWord = '';
 let displayWord = '';
@@ -94,6 +95,9 @@ function giveUp(){
 	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("fileInput").disabled=false;
+	document.getElementById("wordDisplay").textContent=""
+	document.getElementById("usedLetters").textContent=""
+	
 }
 
 function checkWin() {
