@@ -8,6 +8,7 @@ let usedLetters = [];
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
 document.getElementById("newGame").disabled=true;
+document.getElementById("giveUpBtn").disabled=true;
 document.getElementById("fileInput").disabled=false;
 
 document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
