@@ -84,6 +84,10 @@ function guessWord() {
 	}
 }
 
+function giveUp(){
+	document.getElementById('giveUp').textContent = 'Give up';
+}
+
 function checkWin() {
     if (displayWord === currentWord) {
         document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word!';
