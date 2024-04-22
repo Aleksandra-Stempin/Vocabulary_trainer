@@ -78,21 +78,21 @@ function chooseWord() {
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
     displayWord = '-'.repeat(currentWord.length);
-	document.getElementById('wordPolishHeader').textContent = "Word to translate"
-	document.getElementById('wordPolish').textContent = wordToGuess;
-	document.getElementById('wordDisplay').textContent = displayWord;
+    document.getElementById('wordPolishHeader').textContent = "Word to translate"
+    document.getElementById('wordPolish').textContent = wordToGuess;
+    document.getElementById('wordDisplay').textContent = displayWord;
     usedLetters = [];
 	
     document.getElementById('usedLetters').textContent = '';
-	document.getElementById('resultWin').textContent = '';
-	document.getElementById('resultFail').textContent = '';
-	
-	
-	document.getElementById("guessLetter").disabled=false;
-	document.getElementById("guessWord").disabled=false;
-	document.getElementById("newGame").disabled=false;
-	
-	document.getElementById("fileInput").disabled=true;
+    document.getElementById('resultWin').textContent = '';
+    document.getElementById('resultFail').textContent = '';
+
+
+    document.getElementById("guessLetter").disabled=false;
+    document.getElementById("guessWord").disabled=false;
+    document.getElementById("newGame").disabled=false;
+
+    document.getElementById("fileInput").disabled=true;
 }
 
 function guessLetter() {
