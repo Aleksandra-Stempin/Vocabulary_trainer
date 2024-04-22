@@ -100,7 +100,7 @@ function checkWin() {
         document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! ' + displayWord + ' is the correct answer.';
     }
 	else{
-        document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord;
+        document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord.capitalize();
 		
     }
 	document.getElementById("wordDisplay").textContent=""
