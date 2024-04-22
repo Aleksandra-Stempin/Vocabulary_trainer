@@ -93,6 +93,7 @@ function giveUp(){
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=true;
+	document.getElementById("fileInput").disabled=false;
 }
 
 function checkWin() {
