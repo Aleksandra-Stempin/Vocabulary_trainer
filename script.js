@@ -36,6 +36,7 @@ function chooseWord() {
     document.getElementById('usedLetters').textContent = '';
 	document.getElementById('resultWin').textContent = '';
 	document.getElementById('resultFail').textContent = '';
+	document.getElementById('giveUp').textContent = '';
 	
 	
 	document.getElementById("guessLetter").disabled=false;
@@ -90,7 +91,7 @@ function giveUp(){
 	document.getElementById('giveUp').textContent = 'The correct answer is '+ wordToGuess;
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
-	document.getElementById("newGame").disabled=true;
+	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=true;
 }
 
