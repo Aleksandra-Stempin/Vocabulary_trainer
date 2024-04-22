@@ -88,7 +88,7 @@ function guessWord() {
 }
 
 function giveUp(){
-	document.getElementById('giveUp').textContent = 'The correct answer is '+ wordToGuess;
+	document.getElementById('giveUp').textContent = 'The correct answer is '+ displayWord;
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("newGame").disabled=false;
@@ -97,7 +97,7 @@ function giveUp(){
 
 function checkWin() {
     if (displayWord === currentWord) {
-        document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! ' + wordToGuess + ' is the correct answer.';
+        document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! ' + displayWord + ' is the correct answer.';
     }
 	else{
         document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord;
