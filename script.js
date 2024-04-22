@@ -88,7 +88,7 @@ function guessWord() {
 }
 
 function giveUp(){
-	document.getElementById('giveUp').textContent = 'The correct answer is '+ displayWord;
+	document.getElementById('giveUp').textContent = 'The correct answer is '+ displayWord + ' ' + currentWord;
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("newGame").disabled=false;
