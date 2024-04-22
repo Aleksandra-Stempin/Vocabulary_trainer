@@ -96,7 +96,7 @@ function giveUp(){
 
 function checkWin() {
     if (displayWord === currentWord) {
-        document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word!';
+        document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! ' + wordToGuess + ' is the correct answer.';
     }
 	else{
         document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord;
