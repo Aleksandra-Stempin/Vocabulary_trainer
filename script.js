@@ -41,6 +41,7 @@ function chooseWord() {
 	document.getElementById("guessLetter").disabled=false;
 	document.getElementById("guessWord").disabled=false;
 	document.getElementById("newGame").disabled=false;
+	document.getElementById("giveUpBtn").disabled=false;
 	
 	document.getElementById("fileInput").disabled=true;
 }
@@ -104,5 +105,6 @@ function checkWin() {
 	
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
+	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("fileInput").disabled=false;
 }
