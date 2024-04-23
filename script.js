@@ -27,6 +27,14 @@ document.getElementById('fileInput').addEventListener('change', function selecte
     reader.readAsText(file);
 });
 
+function selectChances(){
+	let chancesCount = document.getElementById('gameLevel').value;
+	document.getElementById('chancesCounterLabel_1').textContent="You have "
+	document.getElementById('chancesCounter').textContent=chancesCount
+	document.getElementById('chancesCounterLabel_2').textContent=" chances left."
+}
+
+
 function chooseWord() {
 	document.getElementById("test").textContent=""
     let wordPair = words[Math.floor(Math.random() * words.length)];

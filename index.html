@@ -24,12 +24,17 @@ To guess a word, type a letter in the text field and click the <b>Guess Word</b>
 	</div>
 	<div id='levelDiv'>
 		<label for="'gameLevel">Chose game level: </label>
-		<select id='gameLevel' class="myButton">
+		<select id='gameLevel' onchange="selectChances" class="myButton">
 			<option value=3>Hard (3 chances)</option>
 			<option value=5>Medium (5 chances)</option>
 			<option value=10>Easy(10 chances)</option>
 		</select>
-		<p id="chancesPar"></p>
+		<p>
+			<span id="chancesCounterLabel_1"></span>
+			<span id="chancesCounter"></span>
+			<span id="chancesCounterLabel_2"></span>
+			
+		</p>
 	</div>
 	
 	<div id="textDiv">
