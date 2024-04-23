@@ -28,6 +28,7 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 });
 
 function chooseWord() {
+	document.getElementById("test").textContent=""
     let wordPair = words[Math.floor(Math.random() * words.length)];
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
@@ -55,31 +56,37 @@ function chooseWord() {
 function guessLetter() {
     let userLetter = document.getElementById('guessInput').value;
 	let letter = userLetter.toLowerCase().trim();
-    if (!usedLetters.includes(letter)) {
-        usedLetters.push(letter);
-        document.getElementById('usedLetters').textContent = 'Used letters: ' + usedLetters.join(', ');
-        let newDisplayWord = '';
-        for (let i = 0; i < currentWord.length; i++) {
-            if (currentWord[i] === letter) {
-                newDisplayWord += letter;
-            } else {
-                newDisplayWord += displayWord[i];
-            }
-        }
-        displayWord = newDisplayWord;
-        document.getElementById('wordDisplay').textContent = displayWord;
-		document.getElementById("guessInput").value = ""
-		wordByLetters = document.getElementById("wordDisplay").textContent
-		if (wordByLetters === currentWord){
-			checkWin()
+	document.getElementById("test").textContent=""
+	if (letter.length===1){
+		if (!usedLetters.includes(letter)) {
+			usedLetters.push(letter);
+			document.getElementById('usedLetters').textContent = 'Used letters: ' + usedLetters.join(', ');
+			let newDisplayWord = '';
+			for (let i = 0; i < currentWord.length; i++) {
+				if (currentWord[i] === letter) {
+					newDisplayWord += letter;
+				} else {
+					newDisplayWord += displayWord[i];
+				}
+			}
+			displayWord = newDisplayWord;
+			document.getElementById('wordDisplay').textContent = displayWord;
+			document.getElementById("guessInput").value = ""
+			wordByLetters = document.getElementById("wordDisplay").textContent
+			if (wordByLetters === currentWord){
+				checkWin()
+			}
 		}
-
-    }
+	}else{
+		document.getElementById("test").textContent="Type a letter"
+	}
+	
 }
 
 function guessWord() {
     let userWord = document.getElementById('guessInput').value;
 	let word = userWord.toLowerCase().trim();
+	document.getElementById("test").textContent=""
 	if (word.length > 0){
 		if (word === currentWord) {
 			displayWord = currentWord;
@@ -92,9 +99,13 @@ function guessWord() {
 			checkWin();
 		}
 	}
+	else{
+		document.getElementById("test").textContent="Type a word"
+	}
 }
 
 function giveUp(){
+	document.getElementById("test").textContent=""
 	document.getElementById('giveUp').textContent = 'The correct answer is '+ currentWord;
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
