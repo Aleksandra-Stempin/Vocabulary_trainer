@@ -78,7 +78,7 @@ function guessLetter() {
 					newDisplayWord += letter;
 				} else {
 					newDisplayWord += displayWord[i];
-					chancesCount -=1;
+					chancesCount = chancesCount-1;
 					document.getElementById('chancesCounter').textContent=chancesCount;
 
 				}
