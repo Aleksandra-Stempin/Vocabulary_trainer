@@ -80,15 +80,17 @@ function guessLetter() {
 function guessWord() {
     let userWord = document.getElementById('guessInput').value;
 	let word = userWord.toLowerCase().trim();
-    if (word === currentWord) {
-        displayWord = currentWord;
-        document.getElementById('wordDisplay').textContent = displayWord;
-		document.getElementById("guessInput").value = ""
-        checkWin();
-    }
-	else{
-		document.getElementById("guessInput").value = ""
-        checkWin();
+	if (word.length > 0){
+		if (word === currentWord) {
+			displayWord = currentWord;
+			document.getElementById('wordDisplay').textContent = displayWord;
+			document.getElementById("guessInput").value = ""
+			checkWin();
+		}
+		else{
+			document.getElementById("guessInput").value = ""
+			checkWin();
+		}
 	}
 }
 
