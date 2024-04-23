@@ -76,6 +76,8 @@ function guessLetter() {
 			if (wordByLetters === currentWord){
 				checkWin()
 			}
+		}else{
+			document.getElementById("guessInput").value = ""
 		}
 	}else{
 		document.getElementById("test").textContent="Type a letter"
