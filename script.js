@@ -33,7 +33,8 @@ function chooseWord() {
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
     displayWord = '-'.repeat(currentWord.length);
-	document.getElementById('wordPolishHeader').textContent = "Word to translate"
+	document.getElementById('wordPolishHeader').textContent = "Translate the word: "
+	document.getElementById('wordPolishHeader').style.fontWeight='bold'
 	document.getElementById('wordPolish').textContent = wordToGuess;
 	document.getElementById('wordDisplay').textContent = displayWord;
     usedLetters = [];
