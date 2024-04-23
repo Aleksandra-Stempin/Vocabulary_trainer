@@ -78,6 +78,7 @@ function guessLetter() {
 			}
 		}else{
 			document.getElementById("guessInput").value = ""
+			document.getElementById("guessInput").value = ""
 		}
 	}else{
 		document.getElementById("test").textContent="Type a letter"
