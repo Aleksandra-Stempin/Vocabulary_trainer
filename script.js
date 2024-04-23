@@ -6,10 +6,13 @@ let wordToGuess = '';
 let wordByLetters = ''
 let failText = ''
 let usedLetters = [];
+
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
 document.getElementById("newGame").disabled=true;
 document.getElementById("giveUpBtn").disabled=true;
+document.getElementById("guessInput").disabled=true;
+
 document.getElementById("fileInput").disabled=false;
 
 document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
@@ -44,6 +47,7 @@ function chooseWord() {
 	document.getElementById("guessWord").disabled=false;
 	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=false;
+	document.getElementById("guessInput").disabled=false;
 	
 	document.getElementById("fileInput").disabled=true;
 }
@@ -95,6 +99,7 @@ function giveUp(){
 	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("fileInput").disabled=false;
+	document.getElementById("guessInput").disabled=true;
 	document.getElementById("wordDisplay").textContent=""
 	document.getElementById("usedLetters").textContent=""
 	
@@ -117,4 +122,5 @@ function checkWin() {
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("fileInput").disabled=false;
+	document.getElementById("guessInput").disabled=true;
 }
