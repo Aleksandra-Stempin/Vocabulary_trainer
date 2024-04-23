@@ -6,7 +6,7 @@ let wordToGuess = '';
 let wordByLetters = ''
 let failText = ''
 let usedLetters = [];
-
+let chancesCount = 0
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
 document.getElementById("newGame").disabled=true;
@@ -28,10 +28,11 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 });
 
 function selectChances(){
-	let chancesCount = document.getElementById('gameLevel').value;
-	document.getElementById('chancesCounterLabel_1').textContent="You have "
-	document.getElementById('chancesCounter').textContent=chancesCount
-	document.getElementById('chancesCounterLabel_2').textContent=" chances left."
+	chancesCount = document.getElementById('gameLevel').value;
+	document.getElementById('chancesCounterLabel_1').textContent="You have ";
+	document.getElementById('chancesCounter').textContent=chancesCount;
+	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
+	chancesCount = document.getElementById('gameLevel').disabled=true;
 }
 
 
@@ -60,6 +61,7 @@ function chooseWord() {
 	document.getElementById("guessInput").disabled=false;
 	
 	document.getElementById("fileInput").disabled=true;
+	document.getElementById('gameLevel').disabled=false;
 }
 
 function guessLetter() {
@@ -76,6 +78,9 @@ function guessLetter() {
 					newDisplayWord += letter;
 				} else {
 					newDisplayWord += displayWord[i];
+					chancesCount -=1;
+					document.getElementById('chancesCounter').textContent=chancesCount;
+
 				}
 			}
 			displayWord = newDisplayWord;
@@ -127,6 +132,7 @@ function giveUp(){
 	document.getElementById("guessInput").disabled=true;
 	document.getElementById("wordDisplay").textContent=""
 	document.getElementById("usedLetters").textContent=""
+	document.getElementById('gameLevel').disabled=false;
 	
 }
 
@@ -148,4 +154,5 @@ function checkWin() {
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("fileInput").disabled=false;
 	document.getElementById("guessInput").disabled=true;
+	document.getElementById('gameLevel').disabled=false;
 }
