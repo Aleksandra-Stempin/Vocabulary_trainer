@@ -1,23 +1,81 @@
-h1{
-	text-align: center;
+:root {
+	--header-font-color: #002080;
+	--background-color:#b3c6ff;
+	--button-color:#F7F7D4;
+	--button-font-color:#FE2712;
+	--win-font-color:#008000;
+	--fail-font-color:#e60000;
+	--guessInputColor:#cdd8fc;
 }
 
+body{
+	background-color: var(--background-color);
+	font-size:20px;
+	font-family:Helvetica;
+}
+
+h1{
+	text-align: center;
+	color: var(--header-font-color)
+}
+
+#mainDiv{
+	/*text-align:center;*/
+}
 
 #textDiv{
 	text-align: left;
 }
+
 #guessDiv{
 	text-align: left;
 }
+
 #resultWin{
-	color:green;
+	color:var(--win-font-color);
+	font-weight:bold;
+	font-size:15px;
 }
+
 #resultFail{
-	color:red;
+	color:var(--fail-font-color);
+	font-weight:bold;
+	font-size:15px;
+}
+
+
+#guessInput{
+	background-color:var(--guessInputColor);
+	font-weight:bold;
+	font-size:15px;
+}
+
+#guessLetter{
+	width:15%;
+	margin-right:5px;
+}
+
+#guessWord{
+	width:15%;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+#giveUpBtn{
+	width:15%;
+	margin-left:5px;
+}
+
+#newGame{
+	width:45%;
+	margin-left:10px;
+	margin-right:10px;
 }
 
 .myButton{
-	background-color:aqua;
+	background-color:var(--button-color);
+	color: var(--button-font-color);
+	font-weight:bold;
+	font-size:20px;
+	margin-bottom:10px;
 }
-
-
