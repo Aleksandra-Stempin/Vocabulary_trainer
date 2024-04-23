@@ -82,7 +82,7 @@ h1{
 	margin-bottom:10px;
 }
 
-button.myButton::disabled{
+button:disabled.myButton{
 	background-color:var(--disabled-button-color);
 	color: var(--disabled-button-font-color);
 	font-weight:bold;
