@@ -189,10 +189,10 @@ function checkWin() {
         document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord + '.';
 		
     }
-	document.getElementById("wordDisplay").textContent=""
-	document.getElementById("usedLetters").textContent=""
+	document.getElementById("wordDisplay").textContent="";
+	document.getElementById("usedLetters").textContent="";
 	
-	document.getElementById("test").textContent=""
+	document.getElementById("test").textContent="";
 	
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
@@ -207,5 +207,9 @@ function newGame(){
 	selectChances();
 	document.getElementById('gameLevel').disabled=false;
 	document.getElementById("guessInput").disabled=false;
+	document.getElementById("guessInput").textContent="";
+
+
+
 	//document.getElementById('fileInput').disabled=false;
 }
