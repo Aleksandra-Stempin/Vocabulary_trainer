@@ -83,7 +83,8 @@ div{
 	font-weight:bold;
 	font-size:20px;
 	margin-bottom:10px;
-	border-radius: 3px;
+	border-radius: 10px;
+	border:none;
 }
 
 button:disabled{

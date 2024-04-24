@@ -6,7 +6,7 @@ let wordToGuess = '';
 let wordByLetters = ''
 let failText = ''
 let usedLetters = [];
-let chancesCount = 0
+let chancesCount = 3
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
 document.getElementById("newGame").disabled=true;
@@ -28,11 +28,12 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 });
 
 function selectChances(){
-	chancesCount = document.getElementById('gameLevel').value;
+	let chancesCounter = document.getElementById('gameLevel').value;
+	chancesCount = chancesCounter
 	document.getElementById('chancesCounterLabel_1').textContent="You have ";
 	document.getElementById('chancesCounter').textContent=chancesCount;
 	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
-	chancesCount = document.getElementById('gameLevel').disabled=true;
+	document.getElementById('gameLevel').disabled=true;
 }
 
 
@@ -53,6 +54,10 @@ function chooseWord() {
 	document.getElementById('resultFail').textContent = '';
 	document.getElementById('giveUp').textContent = '';
 	
+	document.getElementById('chancesCounterLabel_1').textContent="You have ";
+	document.getElementById('chancesCounter').textContent=chancesCount;
+	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
+	
 	
 	document.getElementById("guessLetter").disabled=false;
 	document.getElementById("guessWord").disabled=false;
@@ -68,34 +73,53 @@ function guessLetter() {
     let userLetter = document.getElementById('guessInput').value;
 	let letter = userLetter.toLowerCase().trim();
 	document.getElementById("test").textContent=""
-	if (letter.length===1){
-		if (!usedLetters.includes(letter)) {
-			usedLetters.push(letter);
-			document.getElementById('usedLetters').textContent = 'Used letters: ' + usedLetters.join(', ');
-			let newDisplayWord = '';
-			for (let i = 0; i < currentWord.length; i++) {
-				if (currentWord[i] === letter) {
-					newDisplayWord += letter;
-				} else {
-					newDisplayWord += displayWord[i];
-					chancesCount = chancesCount-1;
-					document.getElementById('chancesCounter').textContent=chancesCount;
-
+	document.getElementById('gameLevel').disabled=true;
+	if (chancesCount>=0){
+		if (letter.length===1){
+			if (!usedLetters.includes(letter)) {
+				usedLetters.push(letter);
+				document.getElementById('usedLetters').textContent = 'Used letters: ' + usedLetters.join(', ');
+				let newDisplayWord = '';
+				for (let i = 0; i < currentWord.length; i++) {
+					if (currentWord[i] === letter) {
+						newDisplayWord += letter;
+					} else {
+						newDisplayWord += displayWord[i];
+						//document.getElementById('chancesCounter').textContent=chancesCount;
+					}
 				}
-			}
-			displayWord = newDisplayWord;
-			document.getElementById('wordDisplay').textContent = displayWord;
-			document.getElementById("guessInput").value = ""
-			wordByLetters = document.getElementById("wordDisplay").textContent
-			if (wordByLetters === currentWord){
-				checkWin()
+				// text.includes("world")
+				if (! currentWord.includes(letter)){
+					chancesCount -=1;
+					document.getElementById('chancesCounter').textContent=chancesCount;
+				}
+				displayWord = newDisplayWord;
+				document.getElementById('wordDisplay').textContent = displayWord;
+				document.getElementById("guessInput").value = ""
+				wordByLetters = document.getElementById("wordDisplay").textContent
+				if (wordByLetters === currentWord){
+					checkWin()
+				}
+			}else{
+				document.getElementById("guessInput").value = ""
 			}
 		}else{
+			document.getElementById("test").textContent="Type a letter"
 			document.getElementById("guessInput").value = ""
 		}
 	}else{
-		document.getElementById("test").textContent="Type a letter"
-		document.getElementById("guessInput").value = ""
+		document.getElementById('resultFail').textContent = "Game over, you lost your last chance!"
+		document.getElementById("wordDisplay").textContent=""
+		document.getElementById("usedLetters").textContent=""
+		
+		document.getElementById("test").textContent=""
+		
+		document.getElementById("guessLetter").disabled=true;
+		document.getElementById("guessWord").disabled=true;
+		document.getElementById("giveUpBtn").disabled=true;
+		document.getElementById("fileInput").disabled=false;
+		document.getElementById("guessInput").disabled=true;
+		document.getElementById('gameLevel').disabled=false;	
 	}
 	
 }
@@ -122,7 +146,16 @@ function guessWord() {
 }
 
 function giveUp(){
-	document.getElementById("test").textContent=""
+	document.getElementById("test").textContent="";
+	document.getElementById("test").textContent="";
+	document.getElementById('resultWin').textContent = "";
+	document.getElementById('resultFail').textContent = "";
+	document.getElementById('chancesCounterLabel_1').textContent="";
+	document.getElementById('chancesCounter').textContent="";
+	document.getElementById('chancesCounterLabel_2').textContent="";
+	
+	
+	
 	document.getElementById('giveUp').textContent = 'The correct answer is '+ currentWord;
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
@@ -155,4 +188,9 @@ function checkWin() {
 	document.getElementById("fileInput").disabled=false;
 	document.getElementById("guessInput").disabled=true;
 	document.getElementById('gameLevel').disabled=false;
+}
+
+function newGame(){
+	chooseWord();
+	//document.getElementById('fileInput').disabled=false;
 }
