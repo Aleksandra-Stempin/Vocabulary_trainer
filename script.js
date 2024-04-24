@@ -74,6 +74,10 @@ function guessLetter() {
 	let letter = userLetter.toLowerCase().trim();
 	document.getElementById("test").textContent=""
 	document.getElementById('gameLevel').disabled=true;
+	if (! currentWord.includes(letter)){
+		chancesCount -=1;
+		document.getElementById('chancesCounter').textContent=chancesCount;
+	}
 	if (chancesCount>0){
 		if (letter.length===1){
 			if (!usedLetters.includes(letter)) {
@@ -89,10 +93,10 @@ function guessLetter() {
 					}
 				}
 				// text.includes("world")
-				if (! currentWord.includes(letter)){
-					chancesCount -=1;
-					document.getElementById('chancesCounter').textContent=chancesCount;
-				}
+			
+
+
+
 				displayWord = newDisplayWord;
 				document.getElementById('wordDisplay').textContent = displayWord;
 				document.getElementById("guessInput").value = ""
