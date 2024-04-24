@@ -116,11 +116,13 @@ function guessLetter() {
 		document.getElementById("wordDisplay").textContent="";
 		document.getElementById("usedLetters").textContent="";
 		document.getElementById("guessInput").textContent="";
+		document.getElementById("guessInput").disabled=true;
 		
 		document.getElementById("test").textContent=""
 		document.getElementById('chancesCounterLabel_1').textContent="";
 		document.getElementById('chancesCounter').textContent="";
 		document.getElementById('chancesCounterLabel_2').textContent="";
+
 
 
 		
@@ -203,5 +205,7 @@ function checkWin() {
 function newGame(){
 	chooseWord();
 	selectChances();
+	document.getElementById('gameLevel').disabled=false;
+	document.getElementById("guessInput").disabled=false;
 	//document.getElementById('fileInput').disabled=false;
 }
