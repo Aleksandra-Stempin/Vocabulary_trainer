@@ -74,7 +74,7 @@ function guessLetter() {
 	let letter = userLetter.toLowerCase().trim();
 	document.getElementById("test").textContent=""
 	document.getElementById('gameLevel').disabled=true;
-	if (chancesCount=0){
+	if (chancesCount>0){
 		if (letter.length===1){
 			if (!usedLetters.includes(letter)) {
 				usedLetters.push(letter);
