@@ -113,8 +113,8 @@ function guessLetter() {
 		document.getElementById("usedLetters").textContent=""
 		
 		document.getElementById("test").textContent=""
-		document.getElementById('chancesCounterLabel_1').textContent=";
-		document.getElementById('chancesCounter').textContent=";
+		document.getElementById('chancesCounterLabel_1').textContent="";
+		document.getElementById('chancesCounter').textContent="";
 		document.getElementById('chancesCounterLabel_2').textContent="";
 		
 		document.getElementById("guessLetter").disabled=true;
