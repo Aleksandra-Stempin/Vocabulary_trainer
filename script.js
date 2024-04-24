@@ -202,5 +202,6 @@ function checkWin() {
 
 function newGame(){
 	chooseWord();
+	selectChances();
 	//document.getElementById('fileInput').disabled=false;
 }
