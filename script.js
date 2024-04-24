@@ -112,14 +112,17 @@ function guessLetter() {
 			document.getElementById("guessInput").value = ""
 		}
 	}else{
-		document.getElementById('resultFail').textContent = "Game over, you lost your last chance! The correct answer is: " + currentWord;
+		document.getElementById('resultFail').textContent = "Game over, you lost your last chance! The correct answer is: " + currentWord + '.';
 		document.getElementById("wordDisplay").textContent="";
 		document.getElementById("usedLetters").textContent="";
+		document.getElementById("guessInput").textContent="";
 		
 		document.getElementById("test").textContent=""
 		document.getElementById('chancesCounterLabel_1').textContent="";
 		document.getElementById('chancesCounter').textContent="";
 		document.getElementById('chancesCounterLabel_2').textContent="";
+
+
 		
 		document.getElementById("guessLetter").disabled=true;
 		document.getElementById("guessWord").disabled=true;
@@ -181,7 +184,7 @@ function checkWin() {
         document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! ' + displayWord + ' is the correct answer.';
     }
 	else{
-        document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord;
+        document.getElementById('resultFail').textContent = 'Game over! The correct answer is: ' + currentWord + '.';
 		
     }
 	document.getElementById("wordDisplay").textContent=""
