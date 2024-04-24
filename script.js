@@ -43,15 +43,14 @@ function chooseWord() {
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
 
-    // displayWord = '-'.repeat(currentWord.length);
-	for(let i=0; i <= currentWord.length; i++){
-		if(currentWord.charAt(i)==" "){
-			displayWord.push(' ');
-		}else{
-			displayWord.push('-');
-		}
-
-	}
+    displayWord = '-'.repeat(currentWord.length);
+	// for(let i=0; i <= currentWord.length; i++){
+	// 	if(currentWord.charAt(i)==" "){
+	// 		displayWord.push(' ');
+	// 	}else{
+	// 		displayWord.push('-');
+	// 	}
+	// }
 
 	document.getElementById('wordPolishHeader').textContent = "Translate the word: "
 	document.getElementById('wordPolishHeader').style.fontWeight='bold'
