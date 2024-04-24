@@ -112,9 +112,9 @@ function guessLetter() {
 			document.getElementById("guessInput").value = ""
 		}
 	}else{
-		document.getElementById('resultFail').textContent = "Game over, you lost your last chance!"
-		document.getElementById("wordDisplay").textContent=""
-		document.getElementById("usedLetters").textContent=""
+		document.getElementById('resultFail').textContent = "Game over, you lost your last chance! The correct answer is: " + currentWord;
+		document.getElementById("wordDisplay").textContent="";
+		document.getElementById("usedLetters").textContent="";
 		
 		document.getElementById("test").textContent=""
 		document.getElementById('chancesCounterLabel_1').textContent="";
