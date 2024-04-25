@@ -13,6 +13,7 @@ document.getElementById("giveUpBtn").disabled=true;
 document.getElementById("guessInput").disabled=true;
 
 document.getElementById("fileInput").disabled=false;
+document.getElementById("gameLevel").selectedIndex = -1;
 
 document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
     let file = this.files[0];
@@ -148,7 +149,9 @@ function guessLetter() {
 		document.getElementById("giveUpBtn").disabled=true;
 		document.getElementById("fileInput").disabled=false;
 		document.getElementById("guessInput").disabled=true;
-		document.getElementById('gameLevel').disabled=false;	
+		document.getElementById('gameLevel').disabled=false;
+		
+		document.getElementById("gameLevel").selectedIndex = -1;
 	}
 	
 }
@@ -183,7 +186,7 @@ function giveUp(){
 	document.getElementById('chancesCounter').textContent="";
 	document.getElementById('chancesCounterLabel_2').textContent="";
 	
-	
+	document.getElementById("gameLevel").selectedIndex = -1;
 	
 	document.getElementById('giveUp').textContent = 'The correct answer is '+ currentWord +".";
 	document.getElementById("guessLetter").disabled=true;
@@ -221,6 +224,8 @@ function checkWin() {
 	document.getElementById("fileInput").disabled=false;
 	document.getElementById("guessInput").disabled=true;
 	document.getElementById('gameLevel').disabled=false;
+
+	document.getElementById("gameLevel").selectedIndex = -1;
 }
 
 function newGame(){
@@ -229,7 +234,8 @@ function newGame(){
 	document.getElementById('gameLevel').disabled=false;
 	document.getElementById("guessInput").disabled=false;
 	document.getElementById("guessInput").textContent="";
-
+	
+	document.getElementById("gameLevel").selectedIndex = -1;
 
 
 	//document.getElementById('fileInput').disabled=false;
