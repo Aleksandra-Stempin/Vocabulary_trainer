@@ -35,10 +35,10 @@ function selectChances(){
 
 	document.getElementById('resultFail').textContent = ""
 	document.getElementById('resultWin').textContent = ""
-	document.getElementById('wordPolishHeader').textContent = ""
-	document.getElementById('wordPolish').textContent = ""
-	document.getElementById('wordDisplay').textContent = ""
-	document.getElementById('usedLetters').textContent = ""
+	// document.getElementById('wordPolishHeader').textContent = ""
+	// document.getElementById('wordPolish').textContent = ""
+	// document.getElementById('wordDisplay').textContent = ""
+	// document.getElementById('usedLetters').textContent = ""
 
 
 	document.getElementById('gameLevel').disabled=true;
