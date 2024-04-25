@@ -90,3 +90,7 @@ div{
 button:disabled{
 	opacity: 0.3;
 }
+
+button:hover{
+	cursor:pointer;
+}
