@@ -94,3 +94,7 @@ button:disabled{
 button:hover{
 	cursor:pointer;
 }
+
+select:hover{
+	cursor:pointer;
+}
