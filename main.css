@@ -87,9 +87,7 @@ div{
 	border:none;
 }
 
-button:disabled{
-	opacity: 0.3;
-}
+
 
 button:hover{
 	cursor:pointer;
@@ -101,4 +99,12 @@ select:hover{
 
 #fileInput input:hover{
 	cursor:pointer;
+}
+
+button:disabled{
+	opacity: 0.3;
+	cursor:default;
+}
+select:disabled{
+	cursor:default;
 }
