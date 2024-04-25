@@ -1,4 +1,3 @@
-
 let words = [];
 let currentWord = '';
 let displayWord = '';
@@ -43,14 +42,18 @@ function chooseWord() {
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
 
-    displayWord = '-'.repeat(currentWord.length);
-	// for(let i=0; i <= currentWord.length; i++){
-	// 	if(currentWord.charAt(i)==" "){
-	// 		displayWord.push(' ');
-	// 	}else{
-	// 		displayWord.push('-');
-	// 	}
-	// }
+    //displayWord = '-'.repeat(currentWord.length);
+	
+	displayWord = ""
+	for(let i=0; i <= currentWord.length; i++){
+	 	if(currentWord.charAt(i)==" "){
+	 		//displayWord.push(' ');
+			displayWord = displayWord + " ";
+	 	}else{
+	 		//displayWord.push('-');
+			displayWord = displayWord + "-";
+	 	}
+	 }
 
 	document.getElementById('wordPolishHeader').textContent = "Translate the word: "
 	document.getElementById('wordPolishHeader').style.fontWeight='bold'
@@ -98,14 +101,10 @@ function guessLetter() {
 						newDisplayWord += letter;
 					} else {
 						newDisplayWord += displayWord[i];
-						//document.getElementById('chancesCounter').textContent=chancesCount;
 					}
 				}
-				// text.includes("world")
+				
 			
-
-
-
 				displayWord = newDisplayWord;
 				document.getElementById('wordDisplay').textContent = displayWord;
 				document.getElementById("guessInput").value = ""
@@ -177,7 +176,7 @@ function giveUp(){
 	
 	
 	
-	document.getElementById('giveUp').textContent = 'The correct answer is '+ currentWord;
+	document.getElementById('giveUp').textContent = 'The correct answer is '+ currentWord +".";
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("newGame").disabled=false;
@@ -200,8 +199,12 @@ function checkWin() {
     }
 	document.getElementById("wordDisplay").textContent="";
 	document.getElementById("usedLetters").textContent="";
+	document.getElementById("chancesCounterLabel_1").textContent="";
+	document.getElementById("chancesCounter").textContent="";
+	document.getElementById("chancesCounterLabel_2").textContent="";
 	
 	document.getElementById("test").textContent="";
+	
 	
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
