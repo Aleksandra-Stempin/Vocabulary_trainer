@@ -32,6 +32,15 @@ function selectChances(){
 	document.getElementById('chancesCounterLabel_1').textContent="You have ";
 	document.getElementById('chancesCounter').textContent=chancesCount;
 	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
+
+	document.getElementById('resultFail').textContent = ""
+	document.getElementById('resultWin').textContent = ""
+	document.getElementById('wordPolishHeader').textContent = ""
+	document.getElementById('wordPolish').textContent = ""
+	document.getElementById('wordDisplay').textContent = ""
+	document.getElementById('usedLetters').textContent = ""
+
+
 	document.getElementById('gameLevel').disabled=true;
 }
 
