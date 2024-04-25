@@ -98,3 +98,7 @@ button:hover{
 select:hover{
 	cursor:pointer;
 }
+
+#fileInput input:hover{
+	cursor:pointer;
+}
