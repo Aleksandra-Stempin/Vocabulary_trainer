@@ -120,7 +120,7 @@ function chooseWord() {
     //displayWord = '-'.repeat(currentWord.length);
 	
 	displayWord = ""
-	for(let i=0; i <= currentWord.length; i++){
+	for(let i=0; i < currentWord.length; i++){
 	 	if(currentWord.charAt(i)==" "){
 	 		//displayWord.push(' ');
 			displayWord = displayWord + " ";
