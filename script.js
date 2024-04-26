@@ -282,6 +282,7 @@ function checkWin() {
 	document.getElementById("chancesCounterLabel_2").textContent="";
 	
 	document.getElementById("test").textContent="";
+	document.getElementById("guessInput").textContent="";
 	
 	
 	document.getElementById("guessLetter").disabled=true;
