@@ -293,6 +293,9 @@ function checkWin() {
 
 	document.getElementById("gameLevel").selectedIndex = -1;
 	document.getElementById("gameLevel").disabled=true;
+
+	document.getElementById("guessInputLabel").hidden = true;
+	document.getElementById("guessInput").hidden = true;
 }
 
 function newGame(){
