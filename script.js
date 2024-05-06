@@ -179,7 +179,7 @@ function guessLetter() {
 		}
 	}else{
 		document.getElementById("guessInput").value = ""
-		document.getElementById('resultFail').textContent = 'Game over, you lost your last chance! ' 
+		document.getElementById('resultFail').innerHTML = 'Game over<br>, you lost your last chance!<br><br>' 
 		+ 'The correct answer for '
 		+ wordToGuess
 		+ ' is: ' 
@@ -253,12 +253,12 @@ function giveUp(){
 
 function checkWin() {
     if (displayWord === currentWord) {
-        document.getElementById('resultWin').textContent = 'Congratulations! You guessed the word! '
+        document.getElementById('resultWin').innerHTML = 'Congratulations!<br>You guessed the word! '
 		+ displayWord
 		+ ' is the correct answer for ' + wordToGuess +'.';
     }
 	else{
-        document.getElementById('resultFail').textContent = 'Game over! The correct answer for '
+        document.getElementById('resultFail').innerHTML = 'Game over!<br>The correct answer for '
 		+ wordToGuess
 		+ ' is ' 
 		+ currentWord + '.';
