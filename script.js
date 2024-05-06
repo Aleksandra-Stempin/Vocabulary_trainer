@@ -84,10 +84,6 @@ function selectChances(){
 	document.getElementById('resultFail').textContent = ""
 	document.getElementById('resultWin').textContent = ""
 
-	
-	
-
-
 	document.getElementById('gameLevel').disabled=true;
 	hideOrShowElements();
 
@@ -105,7 +101,11 @@ function chooseWord() {
 	for(let i=0; i < currentWord.length; i++){
 	 	if(currentWord.charAt(i)==" "){
 			displayWord = displayWord + " ";
-	 	}else{
+	 	}
+		else if(currentWord.charAt(i)=="'"){
+			displayWord = displayWord + "'";
+	 	}
+		else{
 			displayWord = displayWord + "-";
 	 	}
 	 }
@@ -125,7 +125,6 @@ function chooseWord() {
 	document.getElementById('chancesCounter').textContent=chancesCount;
 	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
 	
-
 	
 	document.getElementById("fileInput").disabled=true;
 
