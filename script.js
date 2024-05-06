@@ -30,12 +30,6 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 
 function hideOrShowElements(){
 	
-	const conditionsArray = [
-    document.getElementById("gameLevel").selectedIndex == -1,
-    document.getElementById("fileInput").disabled==false,
-    chancesCount>0,
-	]
-	
 	if((
 		document.getElementById("gameLevel").selectedIndex == -1)
 		||(document.getElementById("fileInput").disabled==false)
