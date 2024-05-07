@@ -202,6 +202,8 @@ function guessLetter() {
 		document.getElementById("wordDisplay").textContent="";
 		document.getElementById("usedLetters").textContent="";
 		document.getElementById("guessInput").value="";
+		document.getElementById("wordPolishHeader").textContent="";
+		document.getElementById("wordPolish").textContent="";
 		
 		
 		document.getElementById("test").textContent=""
