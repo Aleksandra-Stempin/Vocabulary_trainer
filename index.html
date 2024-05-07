@@ -42,33 +42,36 @@ To change file reload page.
 		</p>
 	</div>
 	
-	<div id="textDiv">
-		<span id="wordPolishHeader"></span>
-		<span id="wordPolish"></span>
-		<p id="wordDisplay"></p>
+	<div id="mainDiv">
 	
-		<p id="usedLetters"></p>
-		<p id="resultWin"></p>
-		<p id="resultFail"></p>
-		<p id="giveUp"></p>
-		<p id="test"></p>
-	</div>
-	<div id='buttonDiv'>
-	
-		<div id = "guessDiv">
-			<span id='guessInputLabel'>Enter a letter or a word: </span><input type="text" id="guessInput"><br><br>
-			<button id="guessLetter" class="myButton" onclick="guessLetter()">Guess Letter</button>
-			<button  id="guessWord" class="myButton" onclick="guessWord()">Guess Word</button>
-			<button  id="giveUpBtn" class="myButton" onclick="giveUp()">Give up</button>
+		<div id="textDiv">
+			<span id="wordPolishHeader"></span>
+			<span id="wordPolish"></span>
+			<p id="wordDisplay"></p>
+		
+			<p id="usedLetters"></p>
+			<p id="resultWin"></p>
+			<p id="resultFail"></p>
+			<p id="giveUp"></p>
+			<p id="test"></p>
 		</div>
+		<div id='buttonDiv'>
 		
 		
-		<div id='newGameDiv'>
-			<button id="newGame" class="myButton" onclick="newGame()">New Game</button>
-		</div>
+			<div id = "guessDiv">
+				<span id='guessInputLabel'>Enter a letter or a word: </span><input type="text" id="guessInput"><br><br>
+				<button id="guessLetter" class="myButton" onclick="guessLetter()">Guess Letter</button>
+				<button  id="guessWord" class="myButton" onclick="guessWord()">Guess Word</button>
+				<button  id="giveUpBtn" class="myButton" onclick="giveUp()">Give up</button>
+			</div>
+			
+			
+			<div id='newGameDiv'>
+				<button id="newGame" class="myButton" onclick="newGame()">New Game</button>
+			</div>
 
+		</div>
 	</div>
-	
 	
 	
 	<script src="script.js"></script>

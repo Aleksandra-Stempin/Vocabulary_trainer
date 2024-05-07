@@ -26,16 +26,22 @@ div{
 	margin-bottom: 10px;
 }
 
+#mainDiv{
+	margin-left:25%;
+	margin-right:25%;
+}
+
 #wordDisplay{
-	font-size:120%;
+	font-size:200%;
 }
 
 #textDiv{
-	text-align: left;
+	text-align: center;
 }
 
 #guessDiv{
-	text-align: left;
+	text-align: center;
+	width:100%;
 }
 
 #resultWin{
@@ -60,6 +66,7 @@ div{
 #guessLetter{
 	width:15%;
 	margin-right:5px;
+	
 }
 
 #guessWord{
@@ -73,6 +80,12 @@ div{
 	margin-left:5px;
 }
 
+#newGameDiv{
+	width:100%;
+	text-align: center;
+}
+
+	
 #newGame{
 	width:45%;
 	margin-left:10px;

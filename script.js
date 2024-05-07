@@ -1,3 +1,4 @@
+
 let words = [];
 let currentWord = '';
 let displayWord = '';
@@ -6,13 +7,15 @@ let wordByLetters = ''
 let failText = ''
 let usedLetters = [];
 let chancesCount = 0;
+//disable enable buttons
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
 document.getElementById("newGame").disabled=true;
 document.getElementById("giveUpBtn").disabled=true;
 document.getElementById("guessInput").disabled=true;
-
 document.getElementById("fileInput").disabled=false;
+
+//clear chances select
 document.getElementById("gameLevel").selectedIndex = -1;
 
 document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
@@ -28,13 +31,19 @@ document.getElementById('fileInput').addEventListener('change', function selecte
     reader.readAsText(file);
 });
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function hideOrShowElements(){
+	
 	
 	if((
 		document.getElementById("gameLevel").selectedIndex == -1)
 		||(document.getElementById("fileInput").disabled==false)
 		||(chancesCount==0)
 	){
+		//hide unhide elements
 		document.getElementById("chancesCounterLabel_1").hidden = true;
 		document.getElementById("chancesCounter").hidden = true;
 		document.getElementById("chancesCounterLabel_2").hidden = true;
@@ -44,7 +53,7 @@ function hideOrShowElements(){
 		document.getElementById("guessInputLabel").hidden = true;
 		document.getElementById("guessInput").hidden = true;
 		
-		
+		//disable enable buttons
 		document.getElementById("guessLetter").disabled=true;
 		document.getElementById("guessWord").disabled=true;
 		document.getElementById("newGame").disabled=true;
@@ -52,6 +61,7 @@ function hideOrShowElements(){
 		document.getElementById("guessInput").disabled=true;
 	
 	}else{
+		//hide unhide elements
 		document.getElementById("chancesCounterLabel_1").hidden = false;
 		document.getElementById("chancesCounter").hidden = false;
 		document.getElementById("chancesCounterLabel_2").hidden = false;
@@ -61,7 +71,7 @@ function hideOrShowElements(){
 		document.getElementById("guessInputLabel").hidden = false;
 		document.getElementById("guessInput").hidden = false;
 		
-		
+		//disable enable buttons
 		document.getElementById("guessLetter").disabled=false;
 		document.getElementById("guessWord").disabled=false;
 		document.getElementById("newGame").disabled=false;
@@ -81,8 +91,9 @@ function selectChances(){
 	document.getElementById('chancesCounter').textContent=chancesCount;
 	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
 
-	document.getElementById('resultFail').textContent = ""
-	document.getElementById('resultWin').textContent = ""
+	document.getElementById('resultFail').textContent = "";
+	document.getElementById('resultWin').textContent = "";
+	document.getElementById("guessInput").textContent="";
 
 	document.getElementById('gameLevel').disabled=true;
 	hideOrShowElements();
@@ -97,13 +108,20 @@ function chooseWord() {
     currentWord = wordPair[0].toLowerCase().trim();
 	hideOrShowElements()
 	
+	specialCharsList = [' ', ',']
+	
 	displayWord = ""
 	for(let i=0; i < currentWord.length; i++){
+		
+		
 	 	if(currentWord.charAt(i)==" "){
 			displayWord = displayWord + " ";
 	 	}
 		else if(currentWord.charAt(i)=="'"){
 			displayWord = displayWord + "'";
+	 	}
+		else if(currentWord.charAt(i)==","){
+			displayWord = displayWord + ",";
 	 	}
 		else{
 			displayWord = displayWord + "-";
@@ -125,6 +143,7 @@ function chooseWord() {
 	document.getElementById('chancesCounter').textContent=chancesCount;
 	document.getElementById('chancesCounterLabel_2').textContent=" chances left.";
 	
+
 	
 	document.getElementById("fileInput").disabled=true;
 
@@ -171,27 +190,26 @@ function guessLetter() {
 			document.getElementById("guessInput").value = ""
 		}
 	}else{
-		document.getElementById("guessInput").value = ""
+		document.getElementById("guessInput").value="";
 		document.getElementById('resultFail').innerHTML = 'Game over<br>, you lost your last chance!<br><br>' 
 		+ 'The correct answer for '
 		+ wordToGuess
 		+ ' is: ' 
 		+ currentWord + '.';
 		
-
+		
+		//clear texts
 		document.getElementById("wordDisplay").textContent="";
 		document.getElementById("usedLetters").textContent="";
-		document.getElementById("guessInput").textContent="";
-		document.getElementById("guessInput").disabled=true;
+		document.getElementById("guessInput").value="";
+		
 		
 		document.getElementById("test").textContent=""
 		document.getElementById('chancesCounterLabel_1').textContent="";
 		document.getElementById('chancesCounter').textContent="";
 		document.getElementById('chancesCounterLabel_2').textContent="";
 
-
-
-		
+		//disable enable buttons
 		document.getElementById("guessLetter").disabled=true;
 		document.getElementById("guessWord").disabled=true;
 		document.getElementById("giveUpBtn").disabled=true;
@@ -199,6 +217,7 @@ function guessLetter() {
 		document.getElementById("guessInput").disabled=true;
 		document.getElementById('gameLevel').disabled=false;
 		
+		//clear chances select
 		document.getElementById("gameLevel").selectedIndex = -1;
 	}
 	
@@ -227,15 +246,17 @@ function guessWord() {
 
 function giveUp(){
 	chancesCount=0;
-
-	document.getElementById("test").textContent="";
+	
+	//clear texts
 	document.getElementById("test").textContent="";
 	document.getElementById('resultWin').textContent = "";
 	document.getElementById('resultFail').textContent = "";
 	document.getElementById('chancesCounterLabel_1').textContent="";
 	document.getElementById('chancesCounter').textContent="";
 	document.getElementById('chancesCounterLabel_2').textContent="";
+	document.getElementById("guessInput").value="";
 	
+	//clear chances select
 	document.getElementById("gameLevel").selectedIndex = -1;
 	
 	document.getElementById('giveUp').textContent = 'The correct answer for '+ wordToGuess +' is '+ currentWord +".";
@@ -246,8 +267,9 @@ function giveUp(){
 
 function checkWin() {
     if (displayWord === currentWord) {
-        document.getElementById('resultWin').innerHTML = 'Congratulations!<br>You guessed the word! '
-		+ displayWord
+		correctAnswer = capitalizeFirstLetter(displayWord);
+        document.getElementById('resultWin').innerHTML = "Congratulations!<br>You've guessed the word!<br>"
+		+ correctAnswer
 		+ ' is the correct answer for ' + wordToGuess +'.';
     }
 	else{
@@ -257,51 +279,59 @@ function checkWin() {
 		+ currentWord + '.';
 		
     }
+	
+	//clear texts
 	document.getElementById("wordDisplay").textContent="";
 	document.getElementById("usedLetters").textContent="";
 	document.getElementById("chancesCounterLabel_1").textContent="";
 	document.getElementById("chancesCounter").textContent="";
 	document.getElementById("chancesCounterLabel_2").textContent="";
-	
 	document.getElementById("test").textContent="";
-	document.getElementById("guessInput").textContent="";
+	document.getElementById("guessInput").value="";
 	
+	//clear chances select
+	document.getElementById("gameLevel").selectedIndex = -1;
 	
+	//disable enable buttons
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("guessInput").disabled=true;
-	document.getElementById('gameLevel').disabled=false;
-
-	document.getElementById("gameLevel").selectedIndex = -1;
 	document.getElementById("gameLevel").disabled=true;
-
+	
+	//hide unhide elements
 	document.getElementById("guessInputLabel").hidden = true;
 	document.getElementById("guessInput").hidden = true;
+	
 }
 
 function newGame(){
 	chancesCount=0;
+	document.getElementById("guessInput").value="";
 	chooseWord();
 	selectChances();
+	
 	document.getElementById('gameLevel').disabled=false;
 	document.getElementById("guessInput").disabled=false;
 	
+	//hide unhide elements
 	document.getElementById("wordPolishHeader").hidden = true;
 	document.getElementById("wordPolish").hidden = true;
 	document.getElementById("wordDisplay").hidden = true;
 	
 	
-	document.getElementById("guessInput").textContent="";
 	
+	//clear chances select
 	document.getElementById("gameLevel").selectedIndex = -1;
 	
-	
+	//disable enable buttons
 	document.getElementById("guessLetter").disabled=true;
 	document.getElementById("guessWord").disabled=true;
 	document.getElementById("newGame").disabled=false;
 	document.getElementById("giveUpBtn").disabled=true;
 	document.getElementById("guessInput").disabled=true;
+	document.getElementById('gameLevel').disabled=false;
+	//document.getElementById("guessInput").disabled=false;
 		
 	
 	document.getElementById("gameLevel").disabled=false;
