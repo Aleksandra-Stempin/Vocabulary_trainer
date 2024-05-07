@@ -1,3 +1,4 @@
+
 :root {
 	--header-font-color: #002080;
 	--background-color:#b3c6ff;
@@ -44,6 +45,10 @@ div{
 	width:100%;
 }
 
+#guesButtonsDiv{
+	width:100%;
+}
+
 #resultWin{
 	color:var(--win-font-color);
 	font-weight:bold;
@@ -77,6 +82,7 @@ div{
 
 #giveUpBtn{
 	width:15%;
+	height:100%;
 	margin-left:5px;
 }
 
