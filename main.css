@@ -69,19 +69,21 @@ div{
 }
 
 #guessLetter{
-	width:15%;
+	width:30%;
+	height:100%;
 	margin-right:5px;
 	
 }
 
 #guessWord{
-	width:15%;
+	width:30%;
+	height:100%;
 	margin-left:5px;
 	margin-right:5px;
 }
 
 #giveUpBtn{
-	width:15%;
+	width:30%;
 	height:100%;
 	margin-left:5px;
 }
@@ -93,7 +95,8 @@ div{
 
 	
 #newGame{
-	width:45%;
+	width:90%;
+	height:100%;
 	margin-left:10px;
 	margin-right:10px;
 }
