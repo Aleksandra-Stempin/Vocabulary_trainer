@@ -194,7 +194,7 @@ function guessLetter() {
 		document.getElementById('resultFail').innerHTML = "Game over!<br>You've lost your last chance!<br><br>" 
 		+ 'The correct answer for '
 		+ wordToGuess
-		+ ' is: ' 
+		+ ' is ' 
 		+ currentWord + '.';
 		
 		
