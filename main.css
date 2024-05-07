@@ -3,6 +3,7 @@
 	--header-font-color: #002080;
 	--background-color:#b3c6ff;
 	--button-color:#F7F7D4;
+	--button-focus-color:#f5f517f6;;
 	--button-font-color:#FE2712;
 	--disabled-button-color:#f5f5f5;
 	--disabled-button-font-color:#fae6e2;
@@ -115,6 +116,7 @@ div{
 
 button:hover{
 	cursor:pointer;
+	background-color:var(--button-focus-color);
 }
 
 select:hover{
