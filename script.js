@@ -191,7 +191,7 @@ function guessLetter() {
 		}
 	}else{
 		document.getElementById("guessInput").value="";
-		document.getElementById('resultFail').innerHTML = 'Game over<br>, you lost your last chance!<br><br>' 
+		document.getElementById('resultFail').innerHTML = "Game over!<br>You've lost your last chance!<br><br>" 
 		+ 'The correct answer for '
 		+ wordToGuess
 		+ ' is: ' 
