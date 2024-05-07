@@ -254,6 +254,8 @@ function giveUp(){
 	document.getElementById('chancesCounterLabel_1').textContent="";
 	document.getElementById('chancesCounter').textContent="";
 	document.getElementById('chancesCounterLabel_2').textContent="";
+	document.getElementById("wordPolishHeader").textContent="";
+	document.getElementById("wordPolish").textContent="";
 	document.getElementById("guessInput").value="";
 	
 	//clear chances select
@@ -283,6 +285,8 @@ function checkWin() {
 	//clear texts
 	document.getElementById("wordDisplay").textContent="";
 	document.getElementById("usedLetters").textContent="";
+	document.getElementById("wordPolishHeader").textContent="";
+	document.getElementById("wordPolish").textContent="";
 	document.getElementById("chancesCounterLabel_1").textContent="";
 	document.getElementById("chancesCounter").textContent="";
 	document.getElementById("chancesCounterLabel_2").textContent="";
