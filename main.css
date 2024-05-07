@@ -9,7 +9,8 @@
 	--disabled-button-font-color:#fae6e2;
 	--win-font-color:#008000;
 	--fail-font-color:#e60000;
-	--guessInputColor:#cdd8fc;
+	--guessInputColor:#bccafa;
+	--guessInputFocusColor:#88a2f7;
 }
 
 body{
@@ -119,6 +120,11 @@ button:hover{
 	background-color:var(--button-focus-color);
 }
 
+button:focus{
+	cursor:pointer;
+	background-color:var(--button-focus-color);
+}
+
 select:hover{
 	cursor:pointer;
 }
@@ -127,10 +133,19 @@ select:hover{
 	cursor:pointer;
 }
 
+#guessInput input:hover{
+	background-color:var(--guessInputFocusColor);
+}
+
+#guessInput input:focus{
+	background-color:var(--guessInputFocusColor);
+}
+
 button:disabled{
 	opacity: 0.3;
 	cursor:default;
 }
+
 select:disabled{
 	cursor:default;
 }
