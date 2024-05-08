@@ -133,7 +133,7 @@ select:hover{
 	cursor:pointer;
 }
 
-#guessInput :hover{
+#guessInput:hover{
 	background-color:var(--guessInputFocusColor);
 }
 
