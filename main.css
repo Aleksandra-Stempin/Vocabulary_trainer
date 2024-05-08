@@ -129,15 +129,15 @@ select:hover{
 	cursor:pointer;
 }
 
-#fileInput input:hover{
+input #fileInput:hover{
 	cursor:pointer;
 }
 
-#guessInput input:hover{
+input #guessInput :hover{
 	background-color:var(--guessInputFocusColor);
 }
 
-#guessInput input:focus{
+input #guessInput:focus{
 	background-color:var(--guessInputFocusColor);
 }
 
