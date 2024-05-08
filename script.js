@@ -156,7 +156,7 @@ function guessLetter() {
 	let letter = userLetter.toLowerCase().trim();
 	document.getElementById("test").textContent=""
 	document.getElementById('gameLevel').disabled=true;
-	if (! currentWord.includes(letter) && !usedLetters.includes(letter) ){
+	if (! currentWord.includes(letter) && !usedLetters.includes(letter) && letter.length==1){
 		chancesCount -=1;
 		document.getElementById('chancesCounter').textContent=chancesCount;
 	}
