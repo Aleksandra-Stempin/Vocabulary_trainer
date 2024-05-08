@@ -9,7 +9,7 @@
 	--disabled-button-font-color:#fae6e2;
 	--win-font-color:#008000;
 	--fail-font-color:#e60000;
-	--guessInputColor:#bccafa;
+	--guessInputColor:#dfe7ff;
 	--guessInputFocusColor:#88a2f7;
 }
 
@@ -129,15 +129,15 @@ select:hover{
 	cursor:pointer;
 }
 
-input #fileInput:hover{
+#fileInput:hover{
 	cursor:pointer;
 }
 
-input #guessInput :hover{
+#guessInput :hover{
 	background-color:var(--guessInputFocusColor);
 }
 
-input #guessInput:focus{
+#guessInput:focus{
 	background-color:var(--guessInputFocusColor);
 }
 
