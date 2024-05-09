@@ -29,6 +29,10 @@ div{
 	margin-bottom: 10px;
 }
 
+#instructionHeader{
+	text-transform:uppercase;
+}
+
 #mainDiv{
 	margin-left:25%;
 	margin-right:25%;
@@ -49,11 +53,6 @@ div{
 
 #guesButtonsDiv{
 	width:100%;
-}
-
-#giveUp{
-	font-weight:bold;
-	font-size:25px;
 }
 
 #resultWin{

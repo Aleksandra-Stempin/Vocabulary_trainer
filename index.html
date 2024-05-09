@@ -15,6 +15,7 @@
 
 	<div id='instructionDiv'>
 		<pre>
+	<h3 id='instructionHeader'>Game Instructions</h3>
 To start learning, upload a file with extension <b>.txt"</b> and select the game level from dropdown list.
 The file format should be<b> "word in a foreign language"</b>;<b>"word in your language"</b>.
 
@@ -29,13 +30,17 @@ To start a new game click the <b>New Game</b> button.
 If you want to change the file, refresh the page.
 		</pre>
 	</div>
-	
+	<div>
+		<button id="hideInstructionsBtn" class="myButton" onclick="hideInstructions()">Hide Instructions</button>
+		<button id="unhideInstructionsBtn" class="myButton" onclick="unhideInstructions()">Unide Instructions</button>
+	</div>
 	<div>
 		<input type="file" id="fileInput" accept=".txt">
 	</div>
 	<div id='levelDiv'>
 		<label for="gameLevel">Chose game level: </label>
 		<select id='gameLevel' onchange="selectChances()" class="myButton">
+<!-- 		<select id='gameLevel' onclick="selectChances()" class="myButton"> -->
 			<option value=3>Hard (3 chances)</option>
 			<option value=5>Medium (5 chances)</option>
 			<option value=10>Easy(10 chances)</option>

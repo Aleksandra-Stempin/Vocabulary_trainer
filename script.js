@@ -1,4 +1,3 @@
-
 let words = [];
 let currentWord = '';
 let displayWord = '';
@@ -14,7 +13,9 @@ document.getElementById("newGame").disabled=true;
 document.getElementById("giveUpBtn").disabled=true;
 document.getElementById("guessInput").disabled=true;
 document.getElementById("fileInput").disabled=false;
-
+document.getElementById("hideInstructionsBtn").hidden=false;
+document.getElementById("unhideInstructionsBtn").hidden=true;
+document.getElementById("instructionDiv").hidden=false;
 //clear chances select
 document.getElementById("gameLevel").selectedIndex = -1;
 
@@ -32,6 +33,18 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+function hideInstructions(){
+	document.getElementById("instructionDiv").hidden=true;
+	document.getElementById("hideInstructionsBtn").hidden=true;
+	document.getElementById("unhideInstructionsBtn").hidden=false;
+};
+
+function unhideInstructions(){
+	document.getElementById("instructionDiv").hidden=false;
+	document.getElementById("hideInstructionsBtn").hidden=false;
+	document.getElementById("unhideInstructionsBtn").hidden=true;
+};
 
 function hideOrShowElements(){
 	
