@@ -22,9 +22,7 @@ document.getElementById('fileInput').addEventListener('change', function selecte
     let file = this.files[0];
     let reader = new FileReader();
     reader.onload = function fileReadCompleted() {
-        words = reader.result.split('\n').map(line => line.split('-'));
-        
-		
+        words = reader.result.split('\n').map(line => line.split(';'));
 		chooseWord();
 		hideOrShowElements();
     };
@@ -36,7 +34,6 @@ function capitalizeFirstLetter(string) {
 }
 
 function hideOrShowElements(){
-	
 	
 	if((
 		document.getElementById("gameLevel").selectedIndex == -1)
@@ -119,6 +116,9 @@ function chooseWord() {
 	 	}
 		else if(currentWord.charAt(i)=="'"){
 			displayWord = displayWord + "'";
+	 	}
+		else if(currentWord.charAt(i)=="-"){
+			displayWord = displayWord + "-";
 	 	}
 		else if(currentWord.charAt(i)==","){
 			displayWord = displayWord + ",";
