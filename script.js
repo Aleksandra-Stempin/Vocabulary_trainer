@@ -259,6 +259,7 @@ function giveUp(){
 	document.getElementById("wordPolishHeader").textContent="";
 	document.getElementById("wordPolish").textContent="";
 	document.getElementById("guessInput").value="";
+	document.getElementById("usedLetters").textContent="";
 	
 	//clear chances select
 	document.getElementById("gameLevel").selectedIndex = -1;
