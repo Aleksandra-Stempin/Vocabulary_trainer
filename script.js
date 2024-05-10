@@ -137,7 +137,7 @@ function chooseWord() {
 			displayWord = displayWord + ",";
 	 	}
 		else{
-			displayWord = displayWord + "~";
+			displayWord = displayWord + "●";
 	 	}
 	 }
 
