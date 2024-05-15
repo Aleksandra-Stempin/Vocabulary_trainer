@@ -11,6 +11,7 @@
 	--fail-font-color:#e60000;
 	--guessInputColor:#dfe7ff;
 	--guessInputFocusColor:#88a2f7;
+	--semiBoldFontWeight:530;
 }
 
 body{
@@ -57,16 +58,19 @@ div{
 
 #resultWin{
 	color:var(--win-font-color);
-	font-weight:bold;
+	font-weight:var(--semiBoldFontWeight);
 	font-size:25px;
 }
 
 #resultFail{
 	color:var(--fail-font-color);
-	font-weight:bold;
+	font-weight:var(--semiBoldFontWeight);
 	font-size:25px;
 }
 
+#giveUp{
+	font-size:25px;
+}
 
 #guessInput{
 	background-color:var(--guessInputColor);

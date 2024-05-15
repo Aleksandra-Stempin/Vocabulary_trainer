@@ -30,6 +30,7 @@ To start a new game click the <b>New Game</b> button.
 If you want to change the file, refresh the page.
 		</pre>
 	</div>
+	
 	<div>
 		<button id="hideInstructionsBtn" class="myButton" onclick="hideInstructions()">Hide Instructions</button>
 		<button id="unhideInstructionsBtn" class="myButton" onclick="unhideInstructions()">Unhide Instructions</button>
@@ -37,6 +38,9 @@ If you want to change the file, refresh the page.
 	<div>
 		<input type="file" id="fileInput" accept=".txt">
 	</div>
+	
+	<div id ="fileTest"></div>
+	
 	<div id='levelDiv'>
 		<label for="gameLevel">Chose game level: </label>
 		<select id='gameLevel' onchange="selectChances()" class="myButton">
