@@ -177,6 +177,9 @@ function chooseWord() {
 		else if(currentWord.charAt(i)=="'"){
 			displayWord = displayWord + "'";
 	 	}
+		 else if(currentWord.charAt(i)=="’"){
+			displayWord = displayWord + "’";
+	 	}
 		else if(currentWord.charAt(i)=="-"){
 			displayWord = displayWord + "-";
 	 	}
