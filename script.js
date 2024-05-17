@@ -236,6 +236,12 @@ function guessLetter() {
 		document.getElementById('chancesCounter').textContent=chancesCount;
 	};
 
+	if (usedLetters.includes(letter)){
+		//check if letter has been already used
+		document.getElementById("test").innerHTML = "Letter <b>" + letter + "</b> has already been used.";
+		document.getElementById("guessInput").value = "";
+	};
+
 	if (chancesCount>0){
 		if (letter.length===1){
 			if (!usedLetters.includes(letter)) {
