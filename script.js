@@ -76,7 +76,8 @@ function validateFile(file){
 	if (fileExtension != "txt"){
 		// set info about wrong file type
 		document.getElementById("fileTest").innerHTML = '<b>Wrong file format,<br>please select a different file with ".txt" extension.</b>';
-		//enable choosing file
+		//reset and enable choosing file
+		document.getElementById("fileInput").value=null;
 		document.getElementById("fileInput").disabled=false;
 		//clear chosen level
 		document.getElementById("gameLevel").selectedIndex = -1
