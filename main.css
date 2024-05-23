@@ -1,5 +1,9 @@
 :root {
-	--header-font-color: #002080;
+	--semiBoldFontWeight:530;
+	--result-font-size:30px;
+	
+	/* old  colors*/
+	/* --header-font-color: #002080;
 	--background-color:#b3c6ff;
 	--button-color:#F7F7D4;
 	--button-focus-color:#f5f517f6;;
@@ -9,19 +13,45 @@
 	--win-font-color:#008000;
 	--fail-font-color:#e60000;
 	--guessInputColor:#dfe7ff;
-	--guessInputFocusColor:#88a2f7;
-	--semiBoldFontWeight:530;
+	--guessInputFocusColor:#88a2f7; */
+
+	/* new */
+	--header-font-color: #cc0052;
+	--font-color: #342009;
+	--background-color:#3da3cb;
+	--secondary-background-color:#6efaff;
+	/* --background-color:#347B98;
+	--secondary-background-color:#18eef6; */
+	--button-color:#F7D4D6;
+	--button-focus-color:#fcf6f6;;
+	--button-font-color:#FE2712;;
+	/* --button-font-color:#FB8604; */
+	--disabled-button-color:#f5f5f5;
+	--disabled-button-font-color:#f9ebe8;
+	--win-font-color:#006600;
+	--fail-font-color:#cc0000;
+	--guessInputColor:#5fc7f0;
+	--guessInputFocusColor:#449fc3;
+
+	
+}
+html{
+	background-color: var(--background-color);
+	background-image: linear-gradient(var(--secondary-background-color),  var(--background-color));
+	min-height: 100%;
 }
 
 body{
-	background-color: var(--background-color);
+	color:var(--font-color);
 	font-size:20px;
 	font-family:Helvetica;
+	margin: 30px;
 }
 
 h1{
 	text-align: center;
-	color: var(--header-font-color)
+	color: var(--header-font-color);
+	font-weight: 800;
 }
 
 div{
@@ -58,17 +88,17 @@ div{
 #resultWin{
 	color:var(--win-font-color);
 	font-weight:var(--semiBoldFontWeight);
-	font-size:25px;
+	font-size:var(--result-font-size);
 }
 
 #resultFail{
 	color:var(--fail-font-color);
 	font-weight:var(--semiBoldFontWeight);
-	font-size:25px;
+	font-size:var(--result-font-size);
 }
 
 #giveUp{
-	font-size:25px;
+	font-size:var(--result-font-size);
 }
 
 #guessInput{
@@ -119,7 +149,6 @@ div{
 	border-radius: 10px;
 	border:none;
 }
-
 
 
 button:hover{
