@@ -37,7 +37,7 @@ document.getElementById('fileInput').addEventListener('change', function selecte
 				hideOrShowElements();
 			}else{
 				// set info about wrong file 
-				document.getElementById("fileTest").innerHTML = 'Wrong file,<br>upload a file that machetes pattern <b> "word in a foreign language"</b>;<b>"word in your language"</b>';
+				document.getElementById("fileTest").innerHTML = 'Wrong file,<br>upload a file that matches the pattern<b> "word in a foreign language"</b>;<b>"word in your language"</b>';
 				//reset and enable choosing file
 				document.getElementById("fileInput").value=null;
 				document.getElementById("fileInput").disabled=false;
