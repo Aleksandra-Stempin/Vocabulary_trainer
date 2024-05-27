@@ -8,6 +8,7 @@ var usedLetters = [];
 var chancesCount = 0;
 var selectedLevel =3;
 var file;
+var validLinesFromFile;
 //disable enable buttons
 document.getElementById("guessLetter").disabled=true;
 document.getElementById("guessWord").disabled=true;
@@ -25,18 +26,62 @@ document.getElementById("gameLevel").selectedIndex = -1;
 
 document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
 	file = this.files[0];
-    var reader = new FileReader();
-    reader.onload = function fileReadCompleted() {
-        words = reader.result.split('\n').map(line => line.split(';'));
-		chooseWord();
-		hideOrShowElements();
-    };
-	document.getElementById("fileInput").disabled=true;
-	document.getElementById("gameLevel").disabled=false;
-	document.getElementById("fileTest").innerHTML = "";
-    reader.readAsText(file);
-	validateFile(file)
+	if (validateFile(file)){;
+		var reader = new FileReader();
+		reader.onload = function fileReadCompleted() {
+			words = reader.result.split('\n');
+			validLinesFromFile = getOnlyValidLines(words);
+			if (validLinesFromFile.length>0){
+				document.getElementById("fileTest").innerHTML = '';
+				chooseWord(validLinesFromFile);
+				hideOrShowElements();
+			}else{
+				// set info about wrong file 
+				document.getElementById("fileTest").innerHTML = 'Wrong file,<br>upload a file that machetes pattern <b> "word in a foreign language"</b>;<b>"word in your language"</b>';
+				//reset and enable choosing file
+				document.getElementById("fileInput").value=null;
+				document.getElementById("fileInput").disabled=false;
+				//clear chosen level
+				document.getElementById("gameLevel").selectedIndex = -1
+				document.getElementById("gameLevel").disabled=true;
+			};
+	
+		};
+		document.getElementById("gameLevel").disabled=false;
+		document.getElementById("fileTest").innerHTML = "";
+		reader.readAsText(file);
+	};
 });
+
+
+function validateWordPair(wordPair){
+	// checks if line from file matches program requirements (word_1;word_2)
+	let splittedWords = wordPair.split(";");
+	let splittedWordsLen = splittedWords.length;
+	if (splittedWordsLen==2){
+		if (splittedWords[0].trim().length>0 && splittedWords[1].trim().length>0){
+			return true;
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	};
+
+};
+
+function getOnlyValidLines(wordsFromFile){
+	//select only valid lines from file and adds then to array
+	let validLines = [];
+	let words = "";
+	for (let i=0; i<wordsFromFile.length; i++){
+		words = wordsFromFile[i];
+		if (validateWordPair(words)){
+			validLines.push(words);
+		};
+	};
+	return validLines;
+};
 
 function endGame(){
 	//clear texts
@@ -82,6 +127,10 @@ function validateFile(file){
 		//clear chosen level
 		document.getElementById("gameLevel").selectedIndex = -1
 		document.getElementById("gameLevel").disabled=true;
+		return false
+	}else{
+		document.getElementById("fileInput").disabled=true;
+		return true;
 	};
 	
 };
@@ -190,10 +239,11 @@ function selectChances(){
 };
 
 
-function chooseWord() {
-	//choosing word to guess from a file
-	document.getElementById("test").textContent="";
-    let wordPair = words[Math.floor(Math.random() * words.length)];
+function chooseWord(validLines) {
+	// selects one of valid lines 
+    let randomWordPair = validLines[Math.floor(Math.random() * validLines.length)];
+	// document.getElementById("wordTest").innerHTML =validLines + "<br><br>" + randomWordPair;
+	wordPair =  randomWordPair.split(";");
 	wordToGuess = wordPair[1].toLowerCase().trim();
     currentWord = wordPair[0].toLowerCase().trim();
 
@@ -236,12 +286,10 @@ function guessLetter() {
 		document.getElementById('chancesCounter').textContent=chancesCount;
 	};
 
-	//check if letter has been already used
-	if (usedLetters.includes(letter)){	
+	if (usedLetters.includes(letter)){
+		//check if letter has been already used
 		document.getElementById("test").innerHTML = "Letter <b>" + letter + "</b> has already been used.";
 		document.getElementById("guessInput").value = "";
-		//move focus to text field
-		document.getElementById("guessInput").focus();
 	};
 
 	if (chancesCount>0){
@@ -372,7 +420,7 @@ function newGame(){
 	document.getElementById('resultFail').textContent="";
 	document.getElementById('giveUp').textContent="";
 
-	chooseWord();
+	chooseWord(validLinesFromFile);
 	selectChances();
 	
 	
